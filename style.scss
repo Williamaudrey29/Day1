@@ -1,0 +1,133 @@
+$green-color: #4daf55;
+$blue-color: #3d8980;
+* {
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(to right, $green-color, $blue-color);
+  font-family: "Poppins", sans-serif;
+}
+.card {
+  &:hover &__hidden {
+    opacity: 1;
+    margin-top: 0;
+  }
+  &:hover &__img {
+    // transform: translateY(-50px);
+    transform: translateY(-50px) rotate(-20deg);
+    transition: 0.5s;
+  }
+  margin: auto;
+  width: 320px;
+  height: 400px;
+  background-color: #272d40;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  &__img {
+    width: 220px;
+    object-fit: cover;
+  }
+  &__icon-heart,
+  &__icon-cart {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    --ionicon-stroke-width: 50px;
+    top: 15px;
+  }
+  &__icon-heart {
+    left: 15px;
+  }
+  &__icon-cart {
+    right: 15px;
+  }
+  &__hidden {
+    // display: none;
+    opacity: 0;
+    margin-top: 150px;
+    transition: 0.5s;
+  }
+  &__img {
+    display: block;
+    margin: 50px auto;
+    margin-bottom: 40px;
+  }
+  &__name,
+  &__price {
+    text-align: center;
+    font-weight: 600;
+  }
+  &__name {
+    color: $green-color;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  &__price {
+    color: white;
+    font-size: 26px;
+    display: block;
+  }
+  &__size,
+  &__color {
+    color: white;
+    font-size: 19px;
+    font-weight: 400;
+  }
+  &__size {
+    &-number {
+      color: #242424;
+      font-weight: 400;
+      position: relative;
+      //   background-color: #f5f5f5;
+      //   display: inline-block;
+      padding: 5px 10px;
+      //   line-height: 0px;
+      text-align: center;
+      margin-right: 5px;
+      &:nth-child(2) {
+        margin-left: 15px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: rgb(206, 206, 206);
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 5px;
+      }
+    }
+  }
+  &__color {
+    margin-top: 15px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 15px;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #008000;
+      width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      left: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 35px 0 0 0 #f00, 70px 0 0 0 rgb(0, 89, 255);
+    }
+  }
+  &__button {
+    padding: 10px 20px;
+    background-color: $green-color;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+  }
+}
